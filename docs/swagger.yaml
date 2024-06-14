@@ -16,4 +16,18 @@ paths:
       summary: ping example
       tags:
       - myTest
+    put:
+      consumes:
+      - application/json
+      description: 测试的接口1
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: ping example1
+      tags:
+      - uTest
 swagger: "2.0"

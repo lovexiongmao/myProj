@@ -7,6 +7,7 @@ import (
 	log "myProj/sdk/log"
 )
 
+
 func main() {
 	digc := digcontainer.NewDigC()
 	err := digc.Invoke(func(api apiservice.ApiService) {

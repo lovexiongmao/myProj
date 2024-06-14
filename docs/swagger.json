@@ -25,6 +25,27 @@
                         }
                     }
                 }
+            },
+            "put": {
+                "description": "测试的接口1",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "uTest"
+                ],
+                "summary": "ping example1",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
             }
         }
     }
