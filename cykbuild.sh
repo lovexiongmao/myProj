@@ -1,6 +1,4 @@
-#!/bin/bash
-
-swag init
+swag init -g ./routes/route.go
 
 go run main.go
 

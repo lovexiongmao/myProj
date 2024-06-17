@@ -1,5 +1,21 @@
+basePath: /api/v1
+definitions:
+  models.User:
+    properties:
+      age:
+        type: integer
+      gender:
+        type: string
+      height:
+        type: integer
+      name:
+        type: string
+    type: object
 info:
   contact: {}
+  description: myProj后端api文档服务.
+  title: myProj API
+  version: "1.0"
 paths:
   /addUser:
     post:
@@ -7,39 +23,17 @@ paths:
       - application/json
       description: 测试的接口
       parameters:
-      - default: 张三
-        description: 用户名
+      - description: 新增的用户信息
         in: body
-        name: name
+        name: user
         required: true
         schema:
-          type: primitive
-      - default: 18
-        description: 年龄
-        in: body
-        name: age
-        required: true
-        schema:
-          type: primitive
-      - default: 男
-        description: 性别
-        in: body
-        name: gender
-        required: true
-        schema:
-          type: primitive
-      - default: 180
-        description: 身高
-        in: body
-        name: hight
-        required: true
-        schema:
-          type: primitive
+          $ref: '#/definitions/models.User'
       produces:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: example for add a user
       tags:
       - Test
@@ -55,12 +49,12 @@ paths:
         name: name
         required: true
         schema:
-          type: primitive
+          type: string
       produces:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: example for delete a user
       tags:
       - Test
@@ -69,11 +63,17 @@ paths:
       consumes:
       - application/json
       description: 测试的接口
+      parameters:
+      - description: 根據用戶名來查用戶
+        in: query
+        name: user
+        required: true
+        type: string
       produces:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: example for get a user
       tags:
       - Test
@@ -86,8 +86,14 @@ paths:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: example for update a user
       tags:
       - Test
+schemes:
+- http
+- https
+securityDefinitions:
+  BasicAuth:
+    type: basic
 swagger: "2.0"

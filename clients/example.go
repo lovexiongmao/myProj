@@ -1,3 +1,11 @@
+/*
+ * @Author: lovexiongmao 953191418@qq.com
+ * @Date: 2024-06-14 23:20:06
+ * @LastEditors: lovexiongmao 953191418@qq.com
+ * @LastEditTime: 2024-06-18 00:05:22
+ * @FilePath: \myProj\clients\example.go
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 package clients
 
 import (
@@ -19,10 +27,7 @@ func Ping(ctx *gin.Context) {
 // @Schemes
 // @Description 测试的接口
 // @Tags Test
-// @param name body string true "用户名" default(张三)
-// @param age body int true "年龄" default(18)
-// @param gender body string true "性别" default(男)
-// @param hight body int true "身高" default(180)
+// @param user body models.User true "新增的用户信息"
 // @Accept json
 // @Produce json
 // @Success 200
@@ -66,6 +71,7 @@ func UpDateUser(ctx *gin.Context) {
 // @Schemes
 // @Description 测试的接口
 // @Tags Test
+// @param user query string  true "根據用戶名來查用戶"
 // @Accept json
 // @Produce json
 // @Success 200

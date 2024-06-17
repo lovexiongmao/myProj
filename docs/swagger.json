@@ -1,8 +1,16 @@
 {
+    "schemes": [
+        "http",
+        "https"
+    ],
     "swagger": "2.0",
     "info": {
-        "contact": {}
+        "description": "myProj后端api文档服务.",
+        "title": "myProj API",
+        "contact": {},
+        "version": "1.0"
     },
+    "basePath": "/api/v1",
     "paths": {
         "/addUser": {
             "post": {
@@ -19,49 +27,18 @@
                 "summary": "example for add a user",
                 "parameters": [
                     {
-                        "default": "张三",
-                        "description": "用户名",
-                        "name": "name",
+                        "description": "新增的用户信息",
+                        "name": "user",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "primitive"
-                        }
-                    },
-                    {
-                        "default": 18,
-                        "description": "年龄",
-                        "name": "age",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "type": "primitive"
-                        }
-                    },
-                    {
-                        "default": "男",
-                        "description": "性别",
-                        "name": "gender",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "type": "primitive"
-                        }
-                    },
-                    {
-                        "default": 180,
-                        "description": "身高",
-                        "name": "hight",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "type": "primitive"
+                            "$ref": "#/definitions/models.User"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
@@ -87,13 +64,13 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "primitive"
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
@@ -111,9 +88,18 @@
                     "Test"
                 ],
                 "summary": "example for get a user",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "根據用戶名來查用戶",
+                        "name": "user",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
@@ -133,10 +119,34 @@
                 "summary": "example for update a user",
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
+        }
+    },
+    "definitions": {
+        "models.User": {
+            "type": "object",
+            "properties": {
+                "age": {
+                    "type": "integer"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "BasicAuth": {
+            "type": "basic"
         }
     }
 }
