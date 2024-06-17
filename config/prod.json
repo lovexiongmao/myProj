@@ -1,0 +1,5 @@
+{
+  "db": {
+    "dsn": "user:passwd@tcp(database—endpoint)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
+  }
+}

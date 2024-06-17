@@ -4,7 +4,101 @@
         "contact": {}
     },
     "paths": {
-        "/ping": {
+        "/addUser": {
+            "post": {
+                "description": "测试的接口",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Test"
+                ],
+                "summary": "example for add a user",
+                "parameters": [
+                    {
+                        "default": "张三",
+                        "description": "用户名",
+                        "name": "name",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "primitive"
+                        }
+                    },
+                    {
+                        "default": 18,
+                        "description": "年龄",
+                        "name": "age",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "primitive"
+                        }
+                    },
+                    {
+                        "default": "男",
+                        "description": "性别",
+                        "name": "gender",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "primitive"
+                        }
+                    },
+                    {
+                        "default": 180,
+                        "description": "身高",
+                        "name": "hight",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "primitive"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/deleteUser": {
+            "delete": {
+                "description": "测试的接口",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Test"
+                ],
+                "summary": "example for delete a user",
+                "parameters": [
+                    {
+                        "default": "张三",
+                        "description": "用户名",
+                        "name": "name",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "primitive"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/getUser": {
             "get": {
                 "description": "测试的接口",
                 "consumes": [
@@ -14,20 +108,19 @@
                     "application/json"
                 ],
                 "tags": [
-                    "myTest"
+                    "Test"
                 ],
-                "summary": "ping example",
+                "summary": "example for get a user",
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
+                        "description": ""
                     }
                 }
-            },
+            }
+        },
+        "/updateUser": {
             "put": {
-                "description": "测试的接口1",
+                "description": "测试的接口",
                 "consumes": [
                     "application/json"
                 ],
@@ -35,15 +128,12 @@
                     "application/json"
                 ],
                 "tags": [
-                    "uTest"
+                    "Test"
                 ],
-                "summary": "ping example1",
+                "summary": "example for update a user",
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
+                        "description": ""
                     }
                 }
             }

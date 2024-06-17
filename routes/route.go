@@ -2,8 +2,7 @@ package routes
 
 import (
 	"myProj/clients"
-
-	docs "myProj/docs"
+	"myProj/docs"
 
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
@@ -19,10 +18,13 @@ func SetUpRoutes(r *gin.Engine) *gin.Engine {
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 
 	test := r.Group("api/test")
-	test.GET("tmptest", clients.MyTest)
+	test.GET("ping", clients.Ping)
 
 	v1 := r.Group("api/v1")
-	v1.GET("ping", clients.Ping)
+	v1.POST("addUser", clients.AddUser)
+	v1.DELETE("deleteUser", clients.DeleteUser)
+	v1.PUT("updateUser", clients.UpDateUser)
+	v1.GET("getUser", clients.GetUser)
 
 	return r
 }

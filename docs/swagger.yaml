@@ -1,7 +1,70 @@
 info:
   contact: {}
 paths:
-  /ping:
+  /addUser:
+    post:
+      consumes:
+      - application/json
+      description: 测试的接口
+      parameters:
+      - default: 张三
+        description: 用户名
+        in: body
+        name: name
+        required: true
+        schema:
+          type: primitive
+      - default: 18
+        description: 年龄
+        in: body
+        name: age
+        required: true
+        schema:
+          type: primitive
+      - default: 男
+        description: 性别
+        in: body
+        name: gender
+        required: true
+        schema:
+          type: primitive
+      - default: 180
+        description: 身高
+        in: body
+        name: hight
+        required: true
+        schema:
+          type: primitive
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+      summary: example for add a user
+      tags:
+      - Test
+  /deleteUser:
+    delete:
+      consumes:
+      - application/json
+      description: 测试的接口
+      parameters:
+      - default: 张三
+        description: 用户名
+        in: body
+        name: name
+        required: true
+        schema:
+          type: primitive
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+      summary: example for delete a user
+      tags:
+      - Test
+  /getUser:
     get:
       consumes:
       - application/json
@@ -10,24 +73,21 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
-          schema:
-            type: string
-      summary: ping example
+          description: ""
+      summary: example for get a user
       tags:
-      - myTest
+      - Test
+  /updateUser:
     put:
       consumes:
       - application/json
-      description: 测试的接口1
+      description: 测试的接口
       produces:
       - application/json
       responses:
         "200":
-          description: OK
-          schema:
-            type: string
-      summary: ping example1
+          description: ""
+      summary: example for update a user
       tags:
-      - uTest
+      - Test
 swagger: "2.0"
