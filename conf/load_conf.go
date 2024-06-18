@@ -14,7 +14,7 @@ type DBConfig struct {
 }
 
 func LoadConfig() (*Config, error) {
-	file, err := os.ReadFile("conf/local.go")
+	file, err := os.ReadFile("conf/local.json")
 	if err != nil {
 		return nil, err
 	}

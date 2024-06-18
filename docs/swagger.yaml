@@ -13,9 +13,6 @@ definitions:
     type: object
 info:
   contact: {}
-  description: myProj后端api文档服务.
-  title: myProj API
-  version: "1.0"
 paths:
   /addUser:
     post:
@@ -33,7 +30,7 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: ""
       summary: example for add a user
       tags:
       - Test
@@ -43,18 +40,16 @@ paths:
       - application/json
       description: 测试的接口
       parameters:
-      - default: 张三
-        description: 用户名
-        in: body
-        name: name
+      - description: 删除某个用户
+        in: query
+        name: username
         required: true
-        schema:
-          type: string
+        type: string
       produces:
       - application/json
       responses:
         "200":
-          description: OK
+          description: ""
       summary: example for delete a user
       tags:
       - Test
@@ -64,16 +59,16 @@ paths:
       - application/json
       description: 测试的接口
       parameters:
-      - description: 根據用戶名來查用戶
+      - description: 根据用户名来查询用户
         in: query
-        name: user
+        name: username
         required: true
         type: string
       produces:
       - application/json
       responses:
         "200":
-          description: OK
+          description: ""
       summary: example for get a user
       tags:
       - Test
@@ -82,11 +77,18 @@ paths:
       consumes:
       - application/json
       description: 测试的接口
+      parameters:
+      - description: 更新的用户信息
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
       produces:
       - application/json
       responses:
         "200":
-          description: OK
+          description: ""
       summary: example for update a user
       tags:
       - Test

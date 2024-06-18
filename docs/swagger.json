@@ -5,10 +5,7 @@
     ],
     "swagger": "2.0",
     "info": {
-        "description": "myProj后端api文档服务.",
-        "title": "myProj API",
-        "contact": {},
-        "version": "1.0"
+        "contact": {}
     },
     "basePath": "/api/v1",
     "paths": {
@@ -38,7 +35,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": ""
                     }
                 }
             }
@@ -58,19 +55,16 @@
                 "summary": "example for delete a user",
                 "parameters": [
                     {
-                        "default": "张三",
-                        "description": "用户名",
-                        "name": "name",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "type": "string",
+                        "description": "删除某个用户",
+                        "name": "username",
+                        "in": "query",
+                        "required": true
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": ""
                     }
                 }
             }
@@ -91,15 +85,15 @@
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "根據用戶名來查用戶",
-                        "name": "user",
+                        "description": "根据用户名来查询用户",
+                        "name": "username",
                         "in": "query",
                         "required": true
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": ""
                     }
                 }
             }
@@ -117,9 +111,20 @@
                     "Test"
                 ],
                 "summary": "example for update a user",
+                "parameters": [
+                    {
+                        "description": "更新的用户信息",
+                        "name": "user",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.User"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": ""
                     }
                 }
             }
