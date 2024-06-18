@@ -13,6 +13,9 @@ definitions:
     type: object
 info:
   contact: {}
+  description: myProj后端api文档服务.
+  title: myProj API
+  version: "1.0"
 paths:
   /addUser:
     post:
@@ -30,7 +33,7 @@ paths:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: example for add a user
       tags:
       - Test
@@ -49,7 +52,7 @@ paths:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: example for delete a user
       tags:
       - Test
@@ -68,7 +71,7 @@ paths:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: example for get a user
       tags:
       - Test
@@ -88,7 +91,7 @@ paths:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: example for update a user
       tags:
       - Test
