@@ -4,7 +4,7 @@ https://gocn.github.io/styleguide/docs/03-decisions/#%E5%91%BD%E5%90%8Dnaming
 
 ## 项目骨架说明
 
-api_service api server
+apiservice api server
 
 clients 用于存放接受用户请求的地方，是用户请求的入口
 
@@ -17,8 +17,6 @@ dig_container 用于存放 dig 依赖注入的地方
 middleware 用于存放第三方插件
 
 models 用于存放一些数据模型文件的地方
-
-routes 用于存放路由的地方
 
 sdk 用于存放一些 sdk 工具
 
