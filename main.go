@@ -3,9 +3,10 @@ package main
 import (
 	"flag"
 
-	apiservice "myProj/api_service"
 	"myProj/dao"
 	digcontainer "myProj/dig_container"
+
+	apiservice "myProj/apiservice"
 	log "myProj/sdk/log"
 )
 

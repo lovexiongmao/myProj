@@ -13,11 +13,8 @@ definitions:
     type: object
 info:
   contact: {}
-  description: myProj后端api文档服务.
-  title: myProj API
-  version: "1.0"
 paths:
-  /addUser:
+  /user/addUser:
     post:
       consumes:
       - application/json
@@ -33,11 +30,11 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: ""
       summary: example for add a user
       tags:
       - Test
-  /deleteUser:
+  /user/deleteUser:
     delete:
       consumes:
       - application/json
@@ -52,11 +49,11 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: ""
       summary: example for delete a user
       tags:
       - Test
-  /getUser:
+  /user/getUser:
     get:
       consumes:
       - application/json
@@ -71,11 +68,11 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: ""
       summary: example for get a user
       tags:
       - Test
-  /updateUser:
+  /user/updateUser:
     put:
       consumes:
       - application/json
@@ -91,7 +88,7 @@ paths:
       - application/json
       responses:
         "200":
-          description: OK
+          description: ""
       summary: example for update a user
       tags:
       - Test

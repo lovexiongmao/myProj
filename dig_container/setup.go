@@ -1,7 +1,7 @@
 package digcontainer
 
 import (
-	apiservice "myProj/api_service"
+	apiservice "myProj/apiservice"
 	"myProj/clients"
 	"myProj/conf"
 	"myProj/dao"

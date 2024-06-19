@@ -32,7 +32,7 @@ func (user *UserHandler) Ping(ctx *gin.Context) {
 // @Accept json
 // @Produce json
 // @Success 200
-// @Router /addUser [post]
+// @Router /user/addUser [post]
 func (u *UserHandler) AddUser(ctx *gin.Context) {
 	var user models.User
 	if err := ctx.ShouldBindJSON(&user); err != nil {
@@ -55,7 +55,7 @@ func (u *UserHandler) AddUser(ctx *gin.Context) {
 // @Accept json
 // @Produce json
 // @Success 200
-// @Router /deleteUser [delete]
+// @Router /user/deleteUser [delete]
 func (u *UserHandler) DeleteUser(ctx *gin.Context) {
 	username := ctx.Query("username")
 	if username == "" {
@@ -77,7 +77,7 @@ func (u *UserHandler) DeleteUser(ctx *gin.Context) {
 // @Accept json
 // @Produce json
 // @Success 200
-// @Router /updateUser [put]
+// @Router /user/updateUser [put]
 func (u *UserHandler) UpDateUser(ctx *gin.Context) {
 	var user models.User
 	if err := ctx.ShouldBindJSON(&user); err != nil {
@@ -99,7 +99,7 @@ func (u *UserHandler) UpDateUser(ctx *gin.Context) {
 // @Accept json
 // @Produce json
 // @Success 200
-// @Router /getUser [get]
+// @Router /user/getUser [get]
 func (u *UserHandler) GetUser(ctx *gin.Context) {
 	username := ctx.Query("username")
 	if username == "" {
