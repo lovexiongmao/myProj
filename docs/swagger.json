@@ -5,7 +5,10 @@
     ],
     "swagger": "2.0",
     "info": {
-        "contact": {}
+        "description": "myProj后端api文档服务.",
+        "title": "myProj API",
+        "contact": {},
+        "version": "1.0"
     },
     "basePath": "/api/v1",
     "paths": {
@@ -35,7 +38,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
@@ -64,7 +67,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
@@ -93,7 +96,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
@@ -124,7 +127,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
