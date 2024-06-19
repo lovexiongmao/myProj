@@ -19,12 +19,24 @@ func NewDB(conf *conf.Config) *gorm.DB {
 	return db
 }
 
-func MigrateDB(db *gorm.DB) {
-	err := db.AutoMigrate(
+func MigrateDB() {
+	c, err := conf.LoadConfig()
+	if err != nil {
+		log.Fatalf("Failed to get config %v", err)
+	}
+	db := NewDB(c)
+	errMigrate := db.AutoMigrate(
 		&models.User{},
 		// Add other models here
 	)
-	if err != nil {
+	if errMigrate != nil {
 		log.Fatalf("Failed to migrate database: %v", err)
 	}
+	defer func() {
+		dbConnect, err := db.DB()
+		if err != nil {
+			log.Fatalf("Faild to open mysql connect: %v", err)
+		}
+		dbConnect.Close()
+	}()
 }
