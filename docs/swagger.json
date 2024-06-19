@@ -5,14 +5,11 @@
     ],
     "swagger": "2.0",
     "info": {
-        "description": "myProj后端api文档服务.",
-        "title": "myProj API",
-        "contact": {},
-        "version": "1.0"
+        "contact": {}
     },
     "basePath": "/api/v1",
     "paths": {
-        "/addUser": {
+        "/user/addUser": {
             "post": {
                 "description": "测试的接口",
                 "consumes": [
@@ -38,12 +35,12 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": ""
                     }
                 }
             }
         },
-        "/deleteUser": {
+        "/user/deleteUser": {
             "delete": {
                 "description": "测试的接口",
                 "consumes": [
@@ -67,12 +64,12 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": ""
                     }
                 }
             }
         },
-        "/getUser": {
+        "/user/getUser": {
             "get": {
                 "description": "测试的接口",
                 "consumes": [
@@ -96,12 +93,12 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": ""
                     }
                 }
             }
         },
-        "/updateUser": {
+        "/user/updateUser": {
             "put": {
                 "description": "测试的接口",
                 "consumes": [
@@ -127,7 +124,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": ""
                     }
                 }
             }

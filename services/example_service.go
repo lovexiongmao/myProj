@@ -34,7 +34,7 @@ func (s UserService) DeleteUser(name string) error {
 }
 
 func (s UserService) UpdateUser(user models.User) error {
-	if err := s.db.Save(&user).Where("name = ?", user.Name).Error; err != nil {
+	if err := s.db.Model(&models.User{}).Where("name = ?", user.Name).Updates(user).Error; err != nil {
 		log.Errorf("Failed to update user: %v", err)
 		return err
 	}

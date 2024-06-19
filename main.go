@@ -3,7 +3,7 @@ package main
 import (
 	digcontainer "myProj/dig_container"
 
-	apiservice "myProj/api_service"
+	apiservice "myProj/apiservice"
 	log "myProj/sdk/log"
 )
 
