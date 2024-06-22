@@ -16,6 +16,8 @@ func NewDigC() *dig.Container {
 	container.Provide(dao.NewDB)
 	container.Provide(conf.LoadConfig)
 	container.Provide(clients.NewUserHandler)
+	container.Provide(clients.NewAccountHandler)
 	container.Provide(services.NewUserService)
+	container.Provide(services.NewAccountService)
 	return container
 }

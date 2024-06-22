@@ -15,19 +15,22 @@ type ApiServiceInterface interface {
 
 type params struct {
 	dig.In
-	UserHandler *clients.UserHandler
+	UserHandler    *clients.UserHandler
+	AccountHandler *clients.AccountHandler
 }
 
 type apiService struct {
-	route       *gin.Engine
-	userHandler *clients.UserHandler
+	route          *gin.Engine
+	userHandler    *clients.UserHandler
+	accountHandler *clients.AccountHandler
 }
 
 func NewApiService(p params) ApiServiceInterface {
 	g := gin.Default()
 	api := &apiService{
-		route:       g,
-		userHandler: p.UserHandler,
+		route:          g,
+		userHandler:    p.UserHandler,
+		accountHandler: p.AccountHandler,
 	}
 	api.initRoute()
 	return api

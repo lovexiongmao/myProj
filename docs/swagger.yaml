@@ -1,5 +1,14 @@
 basePath: /api/v1
 definitions:
+  models.AccountInfo:
+    properties:
+      password:
+        type: string
+      role:
+        type: string
+      username:
+        type: string
+    type: object
   models.User:
     properties:
       age:
@@ -17,6 +26,46 @@ info:
   title: myProj API
   version: "1.0"
 paths:
+  /account/login:
+    post:
+      consumes:
+      - application/json
+      description: 登录平台
+      parameters:
+      - description: 新增的用户信息
+        in: body
+        name: login
+        required: true
+        schema:
+          $ref: '#/definitions/models.AccountInfo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: login
+      tags:
+      - account
+  /account/register:
+    post:
+      consumes:
+      - application/json
+      description: 注册一个平台用户
+      parameters:
+      - description: 新增的用户信息
+        in: body
+        name: accountInfo
+        required: true
+        schema:
+          $ref: '#/definitions/models.AccountInfo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: add a account
+      tags:
+      - account
   /user/addUser:
     post:
       consumes:

@@ -16,7 +16,6 @@ func main() {
 	flag.Parse()
 	if *migrate {
 		dao.MigrateDB()
-		return
 	}
 
 	digc := digcontainer.NewDigC()

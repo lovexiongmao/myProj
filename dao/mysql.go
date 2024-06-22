@@ -26,12 +26,14 @@ func MigrateDB() {
 	}
 	db := NewDB(c)
 	errMigrate := db.AutoMigrate(
-		&models.User{},
 		// Add other models here
+		&models.User{},
+		&models.AccountInfo{},
 	)
 	if errMigrate != nil {
 		log.Fatalf("Failed to migrate database: %v", err)
 	}
+
 	defer func() {
 		dbConnect, err := db.DB()
 		if err != nil {
