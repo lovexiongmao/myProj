@@ -1,7 +1,6 @@
 package clients
 
 import (
-	"errors"
 	"myProj/common"
 	"myProj/models"
 	"myProj/sdk/log"
@@ -34,7 +33,6 @@ func NewAccountHandler(accountService *services.AccountService) *AccountHandler 
 // @Router /account/register [post]
 func (a *AccountHandler) AddAccount(ctx *gin.Context) {
 	var accountInfo models.AccountInfo
-	log.Debug(ctx.Params)
 	if err := ctx.ShouldBindJSON(&accountInfo); err != nil {
 		log.Errorf("please enter the correct content: %v", err)
 		ctx.JSON(http.StatusBadRequest, common.ErrResp(err))
@@ -62,17 +60,16 @@ func (a *AccountHandler) AddAccount(ctx *gin.Context) {
 // @Router /account/login [post]
 func (a *AccountHandler) Login(ctx *gin.Context) {
 	var accountInfo models.AccountInfo
-	log.Debug(ctx.Params)
 	if err := ctx.ShouldBindJSON(&accountInfo); err != nil {
 		log.Errorf("please enter the correct content: %v", err)
 		ctx.JSON(http.StatusBadRequest, common.ErrResp(err))
 		return
 	}
-	if err := a.account.Login(accountInfo); err != nil {
-		err = errors.New("用户名/密码错误")
+	token, err := a.account.Login(accountInfo)
+	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, common.ErrResp(err))
 		return
 	}
-	ctx.JSON(http.StatusOK, "登录成功！")
+	ctx.JSON(http.StatusOK, common.SuccResp("登录成功", token))
 
 }

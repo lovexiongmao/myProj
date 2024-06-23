@@ -19,3 +19,11 @@ func OkResp(data interface{}) interface{} {
 		"data":    data,
 	}
 }
+
+func SuccResp(msg string, data interface{}) interface{} {
+	return gin.H{
+		"code":    0,
+		"message": msg,
+		"data":    data,
+	}
+}

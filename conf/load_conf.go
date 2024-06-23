@@ -6,7 +6,8 @@ import (
 )
 
 type Config struct {
-	DB DBConfig `json:"db"`
+	DB     DBConfig `json:"db"`
+	Secret string   `json:"secret"`
 }
 
 type DBConfig struct {
